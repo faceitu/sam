@@ -3,7 +3,7 @@ const environments: any = {
         baseURL: "https://sam-api.lepis.ar/"
     },
     "localhost": {
-        baseURL: "https://localhost:7215/"
+        baseURL: "https://sam-api.lepis.ar/"
     }
 }
 

@@ -2,6 +2,10 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { ChakraProvider } from '@chakra-ui/react';
 import './App.css';
 import AuthenticatedRoot from './AuthenticatedRoot';
+import { extendTheme} from "@chakra-ui/react";
+import theme from '../src/themes/theme'
+
+
 
 
 function App() {
@@ -16,7 +20,7 @@ function App() {
   }
 
   return (
-    <ChakraProvider>
+    <ChakraProvider theme = {theme}>
       <AuthenticatedRoot/>
     </ChakraProvider>
     

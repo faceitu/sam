@@ -7,6 +7,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProductsDashboard from './modules/products/ProductsDashboard';
 import UomDashboard from './modules/products/uom/UomDashboard';
+import Newproduct from './modules/products/Newproduct';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "uom",
         element: <UomDashboard />,
+      },
+      {
+        path: "newproducts",
+        element: <Newproduct />,
       },
     ]
   },

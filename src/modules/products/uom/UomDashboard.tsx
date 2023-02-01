@@ -1,63 +1,66 @@
 
-import { useForm } from 'react-hook-form'
-import {
-  FormErrorMessage,
-  FormLabel,
-  FormControl,
-  Input,
-  Button,
-  Box,
-  Select
-} from '@chakra-ui/react'
+
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { setDefaultResultOrder } from 'dns';
+import { Console } from 'console';
+import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
+import FormuPost from '../../../Components/FormuPost/FormuPost';
+import { Box, Center, VStack } from '@chakra-ui/react';
+
 
 
 
 const UomDashboard = () => {
-        const {
-          handleSubmit,
-          register,
-          formState: { errors, isSubmitting },
+/*    
+ const { isOpen, onOpen, onClose } = useDisclosure();
+    
+    const [units, setUnits] = useState<any>([]);       
+    const [delet, setDelet] = useState(''); 
+    const {
+        handleSubmit,
+        register,
+        formState: { errors, isSubmitting },
         } = useForm();
+        
+
+  const onSubmitt = async (data:any) => {  
+    const body = {
+            "description": data.name,
+            "siSymbol": "Medida ",
+            "category": "Medida"
+          }    
+         await axios.post('https://sam-api.lepis.ar/UnitsOfMeasurement', body)
       
-        const onSubmit = (data:object) => console.log(data);
+}
 
+    useEffect(() => {
+                    axios({     
+                        method: 'GET',
+                        url:  'https://sam-api.lepis.ar/UnitsOfMeasurement'
+                    }).then(res => setUnits(res.data))
+                }, [units]);    
+                
+ const eliminar =  (elemento:any) => {
+        axios.delete('https://sam-api.lepis.ar/UnitsOfMeasurement/'+elemento)
+            
+        .then(res => console.log(res))
+    }
+ const edit = async (elemento:any)=> {
+
+  console.log(elemento) */
+  
+       
+    
     return (
-    <Box display="flex"
-    h="100vh"
-    w="1000px"
-    bg="#191B1F"
-    alignItems="center"
-    justifyContent="center"
-    color= 'tomato'
-    flexDirection='column'
-    > 
-    <h1>ALTA - UNIDAD DE MEDIDA</h1>
+    <>
+        <Center  w = '100vw' color='black'>
+                 <FormuPost></FormuPost>
+        </Center>
+      
 
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl p={'30px'}>
-        <Select
-          id='name'
-          placeholder='Seleccion de unidad de medida'
-          {...register('name', {
-            required: 'This is required'
-           
-          })}
-        >
-                <option> Kilogramo</option>
-                <option> Gramo</option>
-                <option> Cantidad</option>
-                <option> Fraccion</option>
+    </>
 
-        </Select>
-        <FormErrorMessage>
-         
-        </FormErrorMessage>
-      </FormControl>
-      <Button mt={4} colorScheme='teal' isLoading={isSubmitting} type='submit'>
-        Submit
-      </Button>
-    </form>
-    </Box>
     )
 }
 

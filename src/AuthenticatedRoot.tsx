@@ -23,7 +23,7 @@ const AuthenticatedRoot = () => {
         <>
             {token &&
                 <AppLayout>
-
+                    
                 </AppLayout>
             }
         </>

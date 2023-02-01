@@ -1,11 +1,15 @@
-import { Link, VStack } from "@chakra-ui/react";
+import { Link, VStack,  Text } from "@chakra-ui/react";
 import { Link as ReactLink } from "react-router-dom";
 
 const AppMenu = () => {
     return (
         <VStack backgroundColor="#CCC">
-            <Link as={ReactLink} to="products">Productos</Link>
+            <Text>PRODUCTOS</Text>
+            <Link as={ReactLink} to="products">Listado</Link>
+            <Link as={ReactLink} to="newproducts">NuevoProductos</Link>
+            <Text>UNIDADES DE MEDIDA</Text>
             <Link as={ReactLink} to="uom">Unidades de Medida</Link>
+
         </VStack>
     )
 }

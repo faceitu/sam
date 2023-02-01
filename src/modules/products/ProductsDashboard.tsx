@@ -1,17 +1,25 @@
+import { Center, Link } from "@chakra-ui/react";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { Children, useEffect, useState } from "react";
+import { Link as ReactLink  } from "react-router-dom";
+import FormuPost from "../../Components/FormuPost/FormuPost";
+import ListComponent from "../../Components/ListoComponent/ListComponent";
 
 const ProductsDashboard = () => {
     const [products, setProducts] = useState<any>([]);
-    useEffect(() => {
+    
+useEffect(() => {
         const instance = axios.create();
         instance.get('products').then(res => setProducts(res));
-    }, []);
+}, []);
+    
 
     return (
-        <div>
-            dashboard
-        </div>
+        
+    
+            <ListComponent prod = {products.data} />
+  
+ 
     )
 }
 
